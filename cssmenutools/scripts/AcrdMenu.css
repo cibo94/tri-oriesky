@@ -1,0 +1,85 @@
+/* AcrdMenu begin Do not remove the string and comments in the CSS classes below */
+
+.eadQJBB__Main
+{white-space:nowrap;
+width:150px;
+}
+.eadQJBB__Preload
+{width:0px;
+height:0px;
+display: inline;
+position:absolute;top:-1000px;}
+.eadQJBB__Main ul {
+list-style:none;
+padding:0px;
+overflow:hidden;
+display:block;
+float:left;
+border:0px;
+font-size:1px;
+background-image:none;
+}
+.eadQJBB__Main ul li {
+list-style:none;
+padding:0px;
+margin:0px;
+overflow:hidden;
+display:block;
+float:left;
+border:0px;
+font-size:1px;
+background-image:none;
+}
+/*AcrdMenu:0*/
+
+#AcrdMenueadQJBBDiv .eadQJBB__AcrdMenu1{
+font-size:12px;
+font-weight:normal;
+font-family:Arial,Helvetica,sans-serif;
+font-style:normal;
+color:#5B5B5B;
+padding-top:0px;
+padding-right:0px;
+padding-bottom:0px;
+padding-left:15px;
+margin-top:0px;
+margin-right:0px;
+margin-bottom:0px;
+margin-left:0px;
+text-decoration:none;
+display:block;
+background-color:#87CEEB;
+cursor:pointer;
+height:25px;
+line-height:25px;
+}
+
+#AcrdMenueadQJBBDiv .eadQJBB__AcrdMenu1_MO{
+color:#3B3B3B;
+font-weight:normal;
+font-style:normal;
+background-color:#87CEEB;
+}
+
+#AcrdMenueadQJBBDiv .eadQJBB__AcrdMenu1_SEL{
+font-size:12px;
+font-weight:normal;
+font-family:Arial,Helvetica,sans-serif;
+font-style:normal;
+padding-top:0px;
+padding-right:0px;
+padding-bottom:0px;
+padding-left:15px;
+margin-top:0px;
+margin-right:0px;
+margin-bottom:0px;
+margin-left:0px;
+text-decoration:none;
+display:block;
+cursor:pointer;
+height:25px;
+line-height:25px;
+color:#3B3B3B;
+background-color:#87CEEB;
+}
+/* AcrdMenu end*/
