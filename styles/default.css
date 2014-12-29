@@ -2,23 +2,46 @@ html {
     width: 100%;
     height: 100%;
     margin: 0px 0px 0px 0px;
+    overflow: hidden;
 }
 
 body {
     width: 100%;
     height: 100%;
     margin: 0px 0px 0px 0px;
+    overflow: hidden;
 }
 
-body.home {
+/*************************************
+    Forma pre vsetky stranky
+*************************************/
 
+body.default {
+    font-family: 'Bookman Old Style';
+    color: #3e3e3e;
+    font-weight: 100;
+    text-align: justify;
 }
 
-body.home #body-wrapp {
+body.default #body-wrapp a {
+    color: #570808;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+body.default #body-wrapp a:hover {
+    color: #808080;
+    text-decoration-style: solid;
+    text-decoration-line: underline;
+    text-decoration-color: #808080;
+    text-decoration-skip: none;
+}
+
+body.default #body-wrapp {
     display: block;
     position: relative;
-    width: inherit;
-    padding-top: 50px;
+    max-width: 40%;
+    margin-top: 50px;
     top: -50px;
     overflow: auto;
     height: calc(100% - 100px);
@@ -26,32 +49,157 @@ body.home #body-wrapp {
     height: -ms-calc(100% - 100px);
     height: -webkit-calc(100% - 100px);
     z-index: 4;
+    padding-left: 30%;
+    padding-right: 30%;
 }
 
-body.home #header-wrapp {
+body.home #header-wrapp,
+body.default #header-wrapp {
     display: block;
     position: relative;
     width: inherit;
     text-align: center;
     height: 50px;
+    top: 0px;
     overflow: inherit;
     background-color: #808080;
     z-index: 5;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: top 1s;
+    -moz-transition: top 1s;
+    -ms-transition: top 1s;
+    -webkit-transition: top 1s;
 }
 
-body.home #footer-wrapp {
+body.home #footer-wrapp,
+body.default #footer-wrapp {
     position: absolute;
     bottom: 0px;
     display: block;
     left: 0px;
     width: inherit;
-    height: 50px;
+    height: 40px;
+    padding-top: 10px;
     background-color: #808080;
     text-align: center;
     z-index: 5;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: bottom 1s;
+    -moz-transition: bottom 1s;
+    -ms-transition: bottom 1s;
+    -webkit-transition: bottom 1s;
 }
 
-
-body.default {
+body.home #header-wrapp a,
+body.default #header-wrapp a {
+    color: #3e3e3e;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20pt;
+    font-variant-caps: titling-caps;
+    top: 5px;
+    position: relative;
     
+}
+
+/*************************************
+    Hlavna stranka
+*************************************/
+
+body.home {
+    font-family: 'Bookman Old Style';
+    color: #3e3e3e;
+    font-weight: 100;
+    text-align: justify;
+}
+
+body.home #header-wrapp {
+    top: -50px !important;
+}
+body.home #footer-wrapp {
+    bottom: -50px !important;
+}
+body.home #body-wrapp {
+    display: block;
+    position: relative;
+    max-width: 40%;
+    margin-top: 50px;
+    top: -50px;
+    overflow: auto;
+    height: calc(100% - 100px);
+    height: -moz-calc(100% - 100px);
+    height: -ms-calc(100% - 100px);
+    height: -webkit-calc(100% - 100px);
+    z-index: 4;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+body.home #body-wrapp #ref {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 500px;
+    padding-top: 10px;
+    z-index: 0;
+}
+
+body.home #body-wrapp #ref div {
+    display: inline-block;
+    width: 246px;
+    height: 245px; 
+    z-index: 5;
+    background-image: url('../img/asd.jpg');
+    background-size: 250px 250px;
+    background-position: center;
+    opacity: 0.9;
+    cursor: pointer;    
+    transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+}
+
+body.home #body-wrapp #ref div:hover {
+    z-index: 10;
+    opacity: 1 !important;
+    box-shadow: 2px 2px 5px #808080;
+}
+
+body.home #body-wrapp div#odk {
+    margin: 0 auto; 
+    display: block; 
+    text-align: right;
+    position: relative;
+    z-index: 10;
+    width: 500px;
+    padding-top: 200px;
+}
+
+body.home #body-wrapp div#odk a {
+    text-decoration: none;
+    padding-left: 20px;
+    font-size: 20pt;
+    font-family: 'DejaVu Sans Mono';
+    color: #808080;
+    transition: color 1s;
+    -moz-transition: color 1s;
+    -ms-transition: color 1s;
+    -webkit-transition: color 1s;
+    transition: text-shadow 1s;
+    -moz-transition: text-shadow 1s;
+    -ms-transition: text-shadow 1s;
+    -webkit-transition: text-shadow 1s;
+    text-shadow: none;
+}
+
+body.home #body-wrapp div#odk a:hover {
+    color: #585858;
+    text-decoration-style: solid;
+    text-decoration-color: #585858;
+    text-decoration-line: underline;
+    text-decoration-skip: none;
+    text-shadow: 1px 1px 1px #808080;
 }
