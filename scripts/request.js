@@ -8,11 +8,9 @@ function ajaxCreateRequest (page, content, style) {
             loading = document.getElementById("loading"),
             content = this.content,
             style = this.style;
-        loading.id = "loading";
         xmlhttp.onreadystatechange = (function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById(content).innerHTML = xmlhttp.responseText;
-                loading.id = "loaded";
                 body.className = style;
             }
         });
@@ -21,11 +19,9 @@ function ajaxCreateRequest (page, content, style) {
     });
 };
 
-console.log("sending");
-
-var tmp = new ajaxCreateRequest("header.html", "header-wrapp", "content");
+var tmp = new ajaxCreateRequest("header.html", "header-wrapp", "home");
 tmp.send();
-tmp = new ajaxCreateRequest("index.html", "body-wrapp", "content");
+tmp = new ajaxCreateRequest("index.html", "body-wrapp", "home");
 tmp.send();
-tmp = new ajaxCreateRequest("footer.html", "footer-wrapp", "content");
+tmp = new ajaxCreateRequest("footer.html", "footer-wrapp", "home");
 tmp.send();
