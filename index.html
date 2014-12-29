@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sk">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="description" content="..." />
+        <meta name="keywords" content="..." />
+        <meta name="author" content="Miroslav Cibulka, Jana Cibulkova" />
+        <title>TRI ORIEŠKY</title>
+    </head>
+    <body class="home" id="body_loaded">
+        <div id="loading" class="loaded"></div>
+        <div id="header-wrapp"></div>
+        <div id="body-wrapp"></div>
+        <div id="footer-wrapp"></div>
+        <script type="text/javascript" src="scripts/request.js">
+            console.log("sending");
+            ajaxCreateRequest("header-wrapp", "header.html", "content").send();
+            ajaxCreateRequest("body-wrapp", "index.html", "content").send();
+            ajaxCreateRequest("footer-wrapp", "footer.html", "content").send();
+        </script>
+    </body>
+</html>
