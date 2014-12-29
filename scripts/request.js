@@ -12,6 +12,8 @@ function ajaxCreateRequest (page, content, style) {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById(content).innerHTML = xmlhttp.responseText;
                 body.className = style;
+                if (content == "footer-wrapp")
+                    ready = true;
             }
         });
         xmlhttp.open("GET", "php/getContent.php?page=" + this.page, true);
@@ -21,44 +23,46 @@ function ajaxCreateRequest (page, content, style) {
 
 /// isFree je premenna ktora ukazuje ci sa prave nemeni opacity ak hej tak funkcia nerobi nic
 /// c je pocitadlo opacity
-var isFree = true, c = 50;
+/// Ready je zamok ktory caka kym sa nacita a vypise vsetko co sa ma
+var isFree = true, c = 25, ready = true;
 function goto(add) {
     if (isFree) {
         isFree = false;
         var body = document.getElementById("body-wrapp"), 
             half = false,                       // Half -> ci je pred alebo po zobrazovani kontextu
             int = setInterval(function () {     // cyklicky interval koci ked sa plne zobrazi kontext
-
-            if (c == 0) {
-                if (add == "home") {
-                    tmp = new ajaxCreateRequest("header.html", "header-wrapp", "home");
-                    tmp.send();
-                    tmp = new ajaxCreateRequest("index.html", "body-wrapp", "home");
-                    tmp.send();
-                    tmp = new ajaxCreateRequest("footer.html", "footer-wrapp", "home");
-                    tmp.send();
-                } else {
-                    tmp = new ajaxCreateRequest("header.html", "header-wrapp", "default");
-                    tmp.send();
-                    tmp = new ajaxCreateRequest(add, "body-wrapp", "default");
-                    tmp.send();
-                    tmp = new ajaxCreateRequest("footer.html", "footer-wrapp", "default");
-                    tmp.send();
+                if (c == 1) {
+                    ready = false;
+                    if (add == "home") {
+                        tmp = new ajaxCreateRequest("header.html", "header-wrapp", "home");
+                        tmp.send();
+                        tmp = new ajaxCreateRequest("index.html", "body-wrapp", "home");
+                        tmp.send();
+                        tmp = new ajaxCreateRequest("footer.html", "footer-wrapp", "home");
+                        tmp.send();
+                    } else {
+                        tmp = new ajaxCreateRequest("header.html", "header-wrapp", "default");
+                        tmp.send();
+                        tmp = new ajaxCreateRequest(add, "body-wrapp", "default");
+                        tmp.send();
+                        tmp = new ajaxCreateRequest("footer.html", "footer-wrapp", "default");
+                        tmp.send();
+                    }
+                    c++;
+                    half = true;
                 }
-                c++;
-                half = true;
-            }            
-            if (!half) {
-                c--;
-                body.style.opacity = c / 50;
-            } else if (half) {
-                c++;
-                body.style.opacity = c / 50;
-                if (c == 50) {
-                    isFree = true;
-                    clearInterval(int);
-                }
-            }
-        }, 1);
+                if (ready)
+                    if (!half) {
+                        c--;
+                        body.style.opacity = c / 25;
+                    } else if (half) {
+                        c++;
+                        body.style.opacity = c / 25;
+                        if (c == 25) {
+                            isFree = true;
+                            clearInterval(int);
+                        }
+                    }
+            }, 2);
     }
 }

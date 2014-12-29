@@ -19,6 +19,7 @@
         <title>TRI ORIEŠKY</title>
         <link rel="stylesheet" type="text/css" href="styles/default.css" />
         <script type="text/javascript" src="scripts/request.js"></script>
+        <script type="text/javascript" src="scripts/gallery.js"></script>
         <script type="text/javascript">
             function init() {
                 var tmp = new ajaxCreateRequest("header.html", "header-wrapp", "<?php echo $style; ?>");
@@ -31,6 +32,7 @@
         </script>
     </head>
     <body class="home" onload="init();">
+        <div id="wellcome" style="background-image: url('../img/anim.gif?v=<?php echo Date("Y.m.d.G.i.s")?>')" ></div>
         <div id="header-wrapp"></div>
         <div id="body-wrapp"></div>
         <div id="footer-wrapp"></div>
