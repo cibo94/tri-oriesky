@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Petit+Formal+Script&subset=latin,latin-ext);
+
 html {
     width: 100%;
     height: 100%;
@@ -110,7 +112,7 @@ body.default #header-wrapp {
     height: 50px;
     top: 0px;
     overflow: inherit;
-    background-color: #808080;
+    background-color: #33CCCC;
     z-index: 5;
     transition: top 1s;
     -moz-transition: top 1s;
@@ -128,7 +130,7 @@ body.default #footer-wrapp {
     width: inherit;
     height: 40px;
     padding-top: 10px;
-    background-color: #808080;
+    background-color: #33CCCC;
     text-align: center;
     z-index: 5;
     transition: bottom 1s;
@@ -197,25 +199,47 @@ body.home #body-wrapp #ref {
     z-index: 0;
 }
 
-body.home #body-wrapp #ref div {
+body.home #body-wrapp #ref div.pozadie {
     display: inline-block;
     width: 246px;
     height: 245px; 
     z-index: 5;
-    background-image: url('../img/asd.jpg');
     background-size: 250px 250px;
     background-position: center;
     opacity: 0.9;
     cursor: pointer;    
-    transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -ms-transition: opacity 1s;
-    -webkit-transition: opacity 1s;
+    transition: opacity 1s, box-shadow 1s;
+    -moz-transition: opacity 1s, box-shadow 1s;
+    -ms-transition: opacity 1s, box-shadow 1s;
+    -webkit-transition: opacity 1s, box-shadow 1s;
 }
 
-body.home #body-wrapp #ref div:hover {
+body.home #body-wrapp #ref div.pozadie + div.nadpis {
+    font-family: 'Petit Formal Script', cursive;
+    display: inline-block;
+    position: absolute;
+    color: black;
+    font-size: 30px;
+    opacity: 0;
+    transition: opacity 1s, text-shadow 1s;
+    -moz-transition: opacity 1s, text-shadow 1s;
+    -ms-transition: opacity 1s, text-shadow 1s;
+    -webkit-transition: opacity 1s, text-shadow 1s;
     z-index: 10;
+    margin-top: 100px;
+    width: 246px;
+    text-align: center;
+    margin-left: -246px;
+    pointer-events: none;
+}
+
+body.home #body-wrapp #ref div.pozadie:hover + div.nadpis {
     opacity: 1 !important;
+}
+
+body.home #body-wrapp #ref div.pozadie:hover {
+    z-index: 10;
+    opacity: 0.4 !important;
     box-shadow: 2px 2px 5px #808080;
 }
 
@@ -232,8 +256,8 @@ body.home #body-wrapp div#odk {
 body.home #body-wrapp div#odk a {
     text-decoration: none;
     padding-left: 20px;
-    font-size: 20pt;
-    font-family: 'DejaVu Sans Mono';
+    font-size: 17pt;
+    font-family: 'Petit Formal Script', cursive;
     color: #808080;
     transition: color 1s;
     -moz-transition: color 1s;
