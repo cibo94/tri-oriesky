@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Petit+Formal+Script&subset=latin,latin-ext);
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin-ext);
 html {
     width: 100%;
     height: 100%;
@@ -12,6 +12,14 @@ body {
     height: 100%;
     margin: 0px 0px 0px 0px;
     overflow: hidden;
+}
+
+b {
+    font-weight: 700 !important;
+}
+body.default div#wellcome {
+    opacity: 0;
+    visibility: hidden;
 }
 
 div#wellcome {
@@ -57,17 +65,12 @@ div#wellcome {
     100% { opacity: 0; z-index: -999; }
 }
 
-
-b {
-    font-weight: 700 !important;
-}
-
 /*************************************
     Forma pre vsetky stranky
 *************************************/
 
 body.default {
-    font-family: 'Bookman Old Style';
+    font-family: 'Open Sans', sans-serif;
     color: #3e3e3e;
     font-weight: 100;
     text-align: justify;
@@ -112,13 +115,14 @@ body.default #header-wrapp {
     height: 50px;
     top: 0px;
     overflow: inherit;
-    background-color: #33CCCC;
+    background-color: #bcffff;
     z-index: 5;
     transition: top 1s;
     -moz-transition: top 1s;
     -ms-transition: top 1s;
     -webkit-transition: top 1s;
     box-shadow: 2px 0px 2px #808080;
+    cursor: pointer;
 }
 
 body.home #footer-wrapp,
@@ -130,7 +134,7 @@ body.default #footer-wrapp {
     width: inherit;
     height: 40px;
     padding-top: 10px;
-    background-color: #33CCCC;
+    background-color: #bcffff;
     text-align: center;
     z-index: 5;
     transition: bottom 1s;
@@ -140,14 +144,15 @@ body.default #footer-wrapp {
     box-shadow: -2px 0px 2px #808080;
 }
 
-body.home #header-wrapp a,
-body.default #header-wrapp a {
+body.home #header-wrapp,
+body.default #header-wrapp {
     color: #3e3e3e;
+    font-family: Arial;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 20pt;
+    font-weight: 900;
+    font-size: 30pt;
     font-variant-caps: titling-caps;
-    top: 5px;
+    top: -5px;
     position: relative;
     
 }
@@ -157,7 +162,7 @@ body.default #header-wrapp a {
 *************************************/
 
 body.home {
-    font-family: 'Bookman Old Style';
+    font-family: 'Open Sans', sans-serif;
     color: #3e3e3e;
     font-weight: 100;
     text-align: justify;
@@ -172,7 +177,7 @@ body.home #header-wrapp {
     top: -50px !important;
 }
 body.home #footer-wrapp {
-    bottom: -50px !important;
+  /*  bottom: -50px !important;*/
 }
 body.home #body-wrapp {
     display: block;

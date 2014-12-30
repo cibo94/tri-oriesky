@@ -8,6 +8,8 @@ function ajaxCreateRequest (page, content, style) {
             loading = document.getElementById("loading"),
             content = this.content,
             style = this.style;
+        if (content == "body-wrapp")
+            document.cookie = "page=" + this.page.substr(0, this.page.length-5) + ";";
         xmlhttp.onreadystatechange = (function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 document.getElementById(content).innerHTML = xmlhttp.responseText;
