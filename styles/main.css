@@ -1,0 +1,111 @@
+/**
+ * @author Miroslav Cibulka
+ * @brief main style sheet
+ */
+/*Fonts*/
+@import url(http://fonts.googleapis.com/css?family=Petit+Formal+Script&subset=latin,latin-ext);
+/*Imports*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin-ext);
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #3e3e3e;
+  text-align: justify;
+}
+a {
+  font-weight: 800;
+  color: #808080;
+  text-decoration: none;
+  transition: color 0.5;
+  -moz-transition: color 0.5;
+  -ms-transition: color 0.5;
+  -webkit-transition: color 0.5;
+}
+a:hover {
+  color: #626262;
+}
+/**
+ * @author Miroslav Cibulka
+ * @brief index.html (main-menu) style sheet
+ */
+/* index.html */
+#container #ref {
+  width: 525px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Buttons in main menu */
+}
+#container #ref a {
+  font-size: 20pt;
+  padding-left: 6px;
+  padding-right: 50px;
+}
+#container #ref .button {
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  margin: 0;
+  padding: 5px;
+  z-index: 3;
+}
+#container #ref .button .icon {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  opacity: 0.9;
+  transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  box-shadow: none;
+}
+#container #ref .button .icon + .nadpis {
+  content: attr('title');
+  font-family: 'Petit Formal Script', cursive;
+  color: black;
+  text-align: center;
+  font-size: 30px;
+  margin-top: -155px;
+  width: 246px;
+  pointer-events: none;
+  position: absolute;
+  display: inline-block;
+  z-index: 5;
+  transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  opacity: 0;
+}
+#container #ref .button .icon:hover {
+  opacity: 0.4;
+  box-shadow: 2px 2px 5px #808080;
+}
+#container #ref .button .icon:hover + .nadpis {
+  opacity: 1;
+}
+/*Basic Colors*/
+/*Constants*/
+/**
+ * @brief Set transition
+ * @param @x which property will be transited
+ * @param @t duration of transition (default 1s)
+ */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #a4f3e6;
+}
+#container {
+  display: block;
+  width: 800px;
+  height: 100%;
+  z-index: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}

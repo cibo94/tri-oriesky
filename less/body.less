@@ -1,7 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin-ext);
+
 @default_font_color: #3e3e3e;
 @default_font: 'Open Sans', sans-serif;
 
 body {
-    font: @default_font;
+    font-family: @default_font;
     color: @default_font_color;
+    text-align: justify;
+}
+
+a {
+    font-weight: 800;
+    color: #808080;
+    text-decoration: none;
+    .Tranzite(color, 0.5);
+}
+
+a:hover {
+    color: #626262;
 }

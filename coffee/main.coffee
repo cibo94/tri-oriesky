@@ -4,18 +4,22 @@
 (($) ->
 	# Gets page tag value from html url
 	# @return page value as string
-	get_url = ->
+	get_url =->
 		query = {}
-		$.each document.location.search.substr(1).split('&'), (c, q) ->
-			i = q.split('=')
-			query[i[0].toString()] = i[1].toString()
-		query['page']
+		if document.location.search.substr(1)
+			$.each document.location.search.substr(1).split('&'), (c, q) ->
+				i = q.split('=')
+				query[i[0].toString()] = i[1].toString()
+			query['page']
 
 
 	# Retrieve page and put it into container
 	get_page = (page) ->
 		$.get "content/#{page}", (data) ->
 			put_page(data)
+		.fail () ->
+			alert "Požadovaná stránka sa nenašla!"
+			get_page("index.html")
 
 	# puts page to the container
 	put_page = (data) ->
@@ -28,7 +32,9 @@
 	# Load
 	$(document)
 		.ready () ->
-			get_page(get_url())
+			((url) ->
+				if url? then get_page(url) else get_page("index.html")
+			)(get_url())
 
 	# initialize page
 	init =->

@@ -1,0 +1,72 @@
+/**
+ * @author Miroslav Cibulka
+ * @brief index.html (main-menu) style sheet
+ */
+
+/* index.html */
+#container {
+    #ref {
+        width: @menu_icon_size * 2 + 5 * 5;
+        margin-left: auto;
+        margin-right: auto;
+
+        a {
+            font-size: 20pt;
+            padding-left: 6px;
+            padding-right: 50px;
+        }
+
+        /* Buttons in main menu */
+        .button {
+            display: inline-block;
+            width: @menu_icon_size;
+            height: @menu_icon_size;
+            margin: 0;
+            padding: 5px;
+            z-index: 3;
+
+            .icon {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                z-index: 4;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+
+                opacity: 0.9;
+                .Tranzite(opacity, 1s);
+                box-shadow: none;
+
+                +.nadpis {
+                    content: attr('title');
+                    font-family: 'Petit Formal Script', cursive;
+                    color: black;
+                    text-align: center;
+                    font-size: 30px;
+
+                    margin-top: -@menu_icon_size/2 - 30;
+                    width: 246px;
+ //                   margin-left: -246px;
+                    pointer-events: none;
+
+                    position: absolute;
+                    display: inline-block;
+                    z-index: 5;
+
+                    .Tranzite(opacity, 1s);
+                    opacity: 0;
+                }
+
+                &:hover {
+                    opacity: 0.4;
+                    box-shadow: 2px 2px 5px #808080;
+
+                    +.nadpis {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
