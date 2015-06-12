@@ -5,13 +5,12 @@
 	# Gets page tag value from html url
 	# @return page value as string
 	get_url =->
-		query = {}
 		if document.location.search.substr(1)
+			query = {}
 			$.each document.location.search.substr(1).split('&'), (c, q) ->
 				i = q.split('=')
 				query[i[0].toString()] = i[1].toString()
 			query['page']
-
 
 	# Retrieve page and put it into container
 	get_page = (page) ->

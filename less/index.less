@@ -3,17 +3,78 @@
  * @brief index.html (main-menu) style sheet
  */
 
+@-webkit-keyframes background-keyframe {
+    0% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-moz-keyframes background-keyframe {
+    0% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-ms-keyframes background-keyframe {
+    0% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-o-keyframes background-keyframe {
+    0% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes background-keyframe {
+    0% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.animate (@keyframes, @duration) {
+    -webkit-animation: @keyframes @duration;
+    -moz-animation: @keyframes @duration;
+    -ms-animation: @keyframes @duration;
+    -o-animation: @keyframes @duration;
+    animation: @keyframes @duration;
+}
+
 /* index.html */
 #container {
-    #ref {
-        width: @menu_icon_size * 2 + 5 * 5;
+    #background {
+        background-image: url('/images/front.gif');
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: 88% auto;
+        z-index: -1;
+        width: @menu_icon_size * 2 + 80 + 60*2;
         margin-left: auto;
         margin-right: auto;
+        height: 100% - 15px;
+        top: 15px;
+        position: absolute;
+    }
+
+    #ref {
+        width: @menu_icon_size * 2 + 80;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding-top: 220px;
+        z-index: 0;
+        .animate(background-keyframe, 5s);
 
         a {
+            display: inline-block;
             font-size: 20pt;
-            padding-left: 6px;
-            padding-right: 50px;
+            width: @menu_icon_size + 10px;
+            padding-right: 10px;
+            text-align: right;
+            font-family: 'Petit Formal Script', cursive;
+            color: #808080;
+            .Tranzite(color, 0.5s);
+        }
+
+        a:hover {
+            color: #9D9D9D;
         }
 
         /* Buttons in main menu */
@@ -41,17 +102,18 @@
                 +.nadpis {
                     content: attr('title');
                     font-family: 'Petit Formal Script', cursive;
-                    color: black;
+                    color: #808080;
                     text-align: center;
-                    font-size: 30px;
+                    font-size: 25px;
 
-                    margin-top: -@menu_icon_size/2 - 30;
-                    width: 246px;
- //                   margin-left: -246px;
+                    width: @menu_icon_size - 6;
                     pointer-events: none;
 
+                    margin-top: -@menu_icon_size/2 - 20px;
+                    margin-bottom: @menu_icon_size/2 - 20px;
+
                     position: absolute;
-                    display: inline-block;
+                    display: block;
                     z-index: 5;
 
                     .Tranzite(opacity, 1s);

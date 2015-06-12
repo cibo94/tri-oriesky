@@ -4,8 +4,8 @@
     var get_page, get_url, init, init_buttons, put_page;
     get_url = function() {
       var query;
-      query = {};
       if (document.location.search.substr(1)) {
+        query = {};
         $.each(document.location.search.substr(1).split('&'), function(c, q) {
           var i;
           i = q.split('=');

@@ -10,6 +10,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #3e3e3e;
   text-align: justify;
+  padding: 15px;
+  margin: 0px;
 }
 a {
   font-weight: 800;
@@ -23,21 +25,140 @@ a {
 a:hover {
   color: #626262;
 }
+#top,
+#bottom,
+#left,
+#right {
+  background: #4DAFCB;
+  position: fixed;
+  z-index: 999;
+}
+#left,
+#right {
+  top: 0;
+  bottom: 0;
+  width: 15px;
+}
+#left {
+  left: 0;
+}
+#right {
+  right: 0;
+}
+#top,
+#bottom {
+  left: 0;
+  right: 0;
+  height: 15px;
+}
+#top {
+  top: 0;
+}
+#bottom {
+  bottom: 0;
+}
 /**
  * @author Miroslav Cibulka
  * @brief index.html (main-menu) style sheet
  */
+@-webkit-keyframes background-keyframe {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes background-keyframe {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-ms-keyframes background-keyframe {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes background-keyframe {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes background-keyframe {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* index.html */
-#container #ref {
-  width: 525px;
+#container #background {
+  background-image: url('/images/front.gif');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 88% auto;
+  z-index: -1;
+  width: 700px;
   margin-left: auto;
   margin-right: auto;
+  height: 85%;
+  top: 15px;
+  position: absolute;
+}
+#container #ref {
+  width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 220px;
+  z-index: 0;
+  -webkit-animation: background-keyframe 5s;
+  -moz-animation: background-keyframe 5s;
+  -ms-animation: background-keyframe 5s;
+  -o-animation: background-keyframe 5s;
+  animation: background-keyframe 5s;
   /* Buttons in main menu */
 }
 #container #ref a {
+  display: inline-block;
   font-size: 20pt;
-  padding-left: 6px;
-  padding-right: 50px;
+  width: 260px;
+  padding-right: 10px;
+  text-align: right;
+  font-family: 'Petit Formal Script', cursive;
+  color: #808080;
+  transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+}
+#container #ref a:hover {
+  color: #9D9D9D;
 }
 #container #ref .button {
   display: inline-block;
@@ -65,14 +186,15 @@ a:hover {
 #container #ref .button .icon + .nadpis {
   content: attr('title');
   font-family: 'Petit Formal Script', cursive;
-  color: black;
+  color: #808080;
   text-align: center;
-  font-size: 30px;
-  margin-top: -155px;
-  width: 246px;
+  font-size: 25px;
+  width: 244px;
   pointer-events: none;
+  margin-top: -145px;
+  margin-bottom: 105px;
   position: absolute;
-  display: inline-block;
+  display: block;
   z-index: 5;
   transition: opacity 1s;
   -moz-transition: opacity 1s;
@@ -97,7 +219,7 @@ a:hover {
 body {
   margin: 0;
   padding: 0;
-  background-color: #a4f3e6;
+  background-color: #ffffff;
 }
 #container {
   display: block;
