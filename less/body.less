@@ -22,23 +22,19 @@ a:hover {
     color: #626262;
 }
 
-#top, #bottom, #left, #right {
-    background: #4DAFCB;
+#border {
+
     position: fixed;
     z-index: 999;
-}
-    #left, #right {
-        top: 0;
-        bottom: 0;
-        width: 15px;
-    }
-        #left { left: 0; }
-        #right { right: 0; }
+    border: 1px solid #656565;
+    left: 10px;
+    top: 10px;
 
-    #top, #bottom {
-        left: 0;
-        right: 0;
-        height: 15px;
+    #container-wrapper {
+        position: 'absolute';
+        height: 100%;
+        width: 100%;
+        top: 10px;
+        overflow-y: auto;
     }
-        #top { top: 0; }
-        #bottom { bottom: 0; }
+}

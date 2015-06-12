@@ -17,8 +17,7 @@
 		$.get "content/#{page}", (data) ->
 			put_page(data)
 		.fail () ->
-			alert "Požadovaná stránka sa nenašla!"
-			get_page("index.html")
+			get_page("404.html")
 
 	# puts page to the container
 	put_page = (data) ->
@@ -35,9 +34,22 @@
 				if url? then get_page(url) else get_page("index.html")
 			)(get_url())
 
+	$(window)
+		.resize () ->
+			init_border()
+
 	# initialize page
 	init =->
 		init_buttons()
+		init_banner()
+		init_border()
+
+	init_border =->
+		$("#border")
+			.width ->
+				"#{$(window).width()-25}px"
+			.height ->
+				"#{$(window).height()-25}px"
 
 	# init buttons
 	init_buttons =->
@@ -51,8 +63,15 @@
 					"hovered"
 
 			.click (event) ->
-				target = $(this).parent().attr("href")
-				$("#container").fadeOut 500, () ->
-					$(location).attr('href', target);
+				redirect($(this).parent().attr("href"))
 				false
+
+	init_banner =->
+		$("#banner")
+			.click (event) ->
+				redirect('?page=index.html')
+
+	redirect = (target)->
+		$("#container").fadeOut 500, () ->
+			$(location).attr('href', target)
 )(jQuery)

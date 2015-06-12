@@ -3,64 +3,19 @@
  * @brief index.html (main-menu) style sheet
  */
 
-@-webkit-keyframes background-keyframe {
-    0% { opacity: 0; }
-    90% { opacity: 0; }
-    100% { opacity: 1; }
-}
-@-moz-keyframes background-keyframe {
-    0% { opacity: 0; }
-    90% { opacity: 0; }
-    100% { opacity: 1; }
-}
-@-ms-keyframes background-keyframe {
-    0% { opacity: 0; }
-    90% { opacity: 0; }
-    100% { opacity: 1; }
-}
-@-o-keyframes background-keyframe {
-    0% { opacity: 0; }
-    90% { opacity: 0; }
-    100% { opacity: 1; }
-}
-@keyframes background-keyframe {
-    0% { opacity: 0; }
-    90% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-.animate (@keyframes, @duration) {
-    -webkit-animation: @keyframes @duration;
-    -moz-animation: @keyframes @duration;
-    -ms-animation: @keyframes @duration;
-    -o-animation: @keyframes @duration;
-    animation: @keyframes @duration;
-}
-
 /* index.html */
 #container {
-    #background {
-        background-image: url('/images/front.gif');
-        background-position: top right;
-        background-repeat: no-repeat;
-        background-size: 88% auto;
-        z-index: -1;
-        width: @menu_icon_size * 2 + 80 + 60*2;
-        margin-left: auto;
-        margin-right: auto;
-        height: 100% - 15px;
-        top: 15px;
-        position: absolute;
-    }
-
     #ref {
         width: @menu_icon_size * 2 + 80;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        padding-top: 220px;
+        padding-top: 200px;
         z-index: 0;
-        .animate(background-keyframe, 5s);
+        background-image: url("/images/Logo.png");
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center 0px;
 
         a {
             display: inline-block;
