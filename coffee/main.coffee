@@ -31,7 +31,7 @@
 	$(document)
 		.ready () ->
 			((url) ->
-				if url? then get_page(url) else get_page("index.html")
+				get_page(url if url? else "index.html")
 			)(get_url())
 
 	$(window)
