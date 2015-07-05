@@ -13,18 +13,18 @@
         text-align: center;
         padding-top: 200px;
         z-index: 0;
-        background-image: url("/images/Logo.png");
+        background-image: url("/images/logo.png");
         background-size: 100% auto;
         background-repeat: no-repeat;
         background-position: center 0px;
 
         a {
             display: inline-block;
-            font-size: 150%;
+            font-size: 300%;
             width: @menu_icon_size + 10px;
             padding-right: 10px;
             text-align: right;
-            font-family: 'Petit Formal Script', cursive;
+            font-family: 'Impregnable';
             color: #808080;
             .Tranzite(color, 0.5s);
         }
@@ -57,16 +57,16 @@
 
                 +.nadpis {
                     content: attr('title');
-                    font-family: 'Petit Formal Script', cursive;
+                    font-family: 'Impregnable';
                     color: #808080;
                     text-align: center;
-                    font-size: 25px;
+                    font-size: 60px;
 
                     width: @menu_icon_size - 6;
                     pointer-events: none;
 
-                    margin-top: -@menu_icon_size/2 - 20px;
-                    margin-bottom: @menu_icon_size/2 - 20px;
+                    margin-top: -@menu_icon_size/2 - 60px/2;
+                    margin-bottom: @menu_icon_size/2 - 60px/2;
 
                     position: absolute;
                     display: block;
