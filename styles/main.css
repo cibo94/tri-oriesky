@@ -59,7 +59,7 @@ a:hover {
 }
 #container #ref a {
   display: inline-block;
-  font-size: 20pt;
+  font-size: 150%;
   width: 260px;
   padding-right: 10px;
   text-align: right;
@@ -123,8 +123,9 @@ a:hover {
   opacity: 1;
 }
 #container #banner {
+  z-index: 999;
   background-image: url("/images/Banner.png");
-  background-size: auto 100%;
+  background-size: 100% auto;
   background-position: center center;
   background-repeat: no-repeat;
   margin-left: auto;
@@ -133,15 +134,22 @@ a:hover {
   height: 200px;
   cursor: pointer;
 }
-#container img {
+#container #gal_output {
+  text-align: center;
+}
+#container #gal_output img {
   transition: box-shadow 0.5s;
   -moz-transition: box-shadow 0.5s;
   -ms-transition: box-shadow 0.5s;
   -webkit-transition: box-shadow 0.5s;
   box-shadow: 0px 0px 0px #808080;
 }
-#container img:hover {
+#container #gal_output img:hover {
   box-shadow: 2px 3px 2px #808080;
+}
+#container #gal_output .gallery-image {
+  height: 150px;
+  padding: 25px;
 }
 /*Basic Colors*/
 /*Constants*/
@@ -157,7 +165,7 @@ body {
 }
 #container {
   display: block;
-  width: 800px;
+  width: 50%;
   height: 90%;
   z-index: 0;
   margin-left: auto;

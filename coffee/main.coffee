@@ -1,7 +1,19 @@
 # @author Miroslav Cibulka
 # @brief main script for loading content
 
-(($) ->
+Gallery =->
+	this.Init =(base)->
+		this.readDirectory base
+
+	this.readDirectory =(base)->
+		$.get "/php/request_gal.php?dir=#{base ? ""}", (data)->
+			$("#gal_output").html(data + '<script src="js/slimbox2.js" type="text/javascript"></script><script>InitGallery();</script>')
+		.fail () ->
+			$("#gal_output").html "<h1>Uuups Something went wrong!</h1>"
+
+	this
+
+(($, Gallery) ->
 	# Gets page tag value from html url
 	# @return page value as string
 	get_url =->
@@ -10,7 +22,7 @@
 			$.each document.location.search.substr(1).split('&'), (c, q) ->
 				i = q.split('=')
 				query[i[0].toString()] = i[1].toString()
-			query['page']
+			query
 
 	# Retrieve page and put it into container
 	get_page = (page) ->
@@ -31,7 +43,9 @@
 	$(document)
 		.ready () ->
 			((url) ->
-				get_page(url if url? else "index.html")
+				get_page(url['page'] ? "index.html")
+				if url['page'] == "galeria.html"
+					(new Gallery).Init url['gal_dir']
 			)(get_url())
 
 	$(window)
@@ -74,4 +88,4 @@
 	redirect = (target)->
 		$("#container").fadeOut 500, () ->
 			$(location).attr('href', target)
-)(jQuery)
+)(jQuery, Gallery)
