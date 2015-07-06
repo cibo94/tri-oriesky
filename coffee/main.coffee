@@ -43,7 +43,7 @@ Gallery =->
 	$(document)
 		.ready () ->
 			((url) ->
-				get_page(url['page'] ? "index.html")
+				get_page(if url?['page']? then url['page'] else "index.html")
 				if url['page'] == "galeria.html"
 					(new Gallery).Init url['gal_dir']
 			)(get_url())

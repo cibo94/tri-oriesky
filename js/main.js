@@ -43,8 +43,7 @@
     };
     $(document).ready(function() {
       return (function(url) {
-        var ref;
-        get_page((ref = url['page']) != null ? ref : "index.html");
+        get_page((url != null ? url['page'] : void 0) != null ? url['page'] : "index.html");
         if (url['page'] === "galeria.html") {
           return (new Gallery).Init(url['gal_dir']);
         }
