@@ -1,1 +1,13 @@
+RewriteEngine On
 RewriteBase /
+
+RewriteRule ^404/?$ /index.html?page=404.html [L,R=301]
+RewriteRule ^index/?$ /index.html?page=index.html [L,R=301]
+RewriteRule ^about/?$ /index.html?page=about.html [L,R=301]
+RewriteRule ^galeria/([^/]+)/?$ /index.html?page=galeria.html&gal_dir=$1 [L,R=301]
+RewriteRule ^galeria/?$ /index.html?page=galeria.html [L,R=301]
+RewriteRule ^kontakt/?$ /index.html?page=kontakt.html [L,R=301]
+RewriteRule ^referencie/?$ /index.html?page=referencie.html [L,R=301]
+RewriteRule ^sluzby/?$ /index.html?page=sluzby.html [L,R=301]
+
+ErrorDocument 404 http://tri-oriesky.890m.com/index.html?page=404.html
