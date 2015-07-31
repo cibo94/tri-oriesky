@@ -57,7 +57,7 @@ a:hover {
  */
 /* index.html */
 #container #ref {
-  width: 580px;
+  width: 610px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -71,12 +71,9 @@ a:hover {
 }
 #container #ref a {
   display: inline-block;
-  font-size: 240%;
-  width: 260px;
-  padding-right: 10px;
-  text-align: right;
+  font-size: 220%;
   font-family: "Script mt std bold";
-  color: #808080;
+  color: #c0c0c0;
   transition: color 0.5s;
   -moz-transition: color 0.5s;
   -ms-transition: color 0.5s;
@@ -87,8 +84,8 @@ a:hover {
 }
 #container #ref .button {
   display: inline-block;
-  width: 250px;
-  height: 250px;
+  width: 290px;
+  height: 290px;
   margin: 0;
   padding: 5px;
   z-index: 3;
@@ -114,10 +111,10 @@ a:hover {
   color: #808080;
   text-align: center;
   font-size: 40px;
-  width: 244px;
+  width: 284px;
   pointer-events: none;
-  margin-top: -155px;
-  margin-bottom: 95px;
+  margin-top: -175px;
+  margin-bottom: 115px;
   position: relative;
   display: block;
   z-index: 5;
