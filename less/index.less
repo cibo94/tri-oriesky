@@ -20,11 +20,11 @@
 
         a {
             display: inline-block;
-            font-size: 300%;
+            font-size: 240%;
             width: @menu_icon_size + 10px;
             padding-right: 10px;
             text-align: right;
-            font-family: 'Impregnable';
+            font-family: @default_menu_font;
             color: #808080;
             .Tranzite(color, 0.5s);
         }
@@ -57,10 +57,10 @@
 
                 +.nadpis {
                     content: attr('title');
-                    font-family: 'Impregnable';
+                    font-family: @default_menu_font;
                     color: #808080;
                     text-align: center;
-                    font-size: 60px;
+                    font-size: 40px;
 
                     width: @menu_icon_size - 6;
                     pointer-events: none;

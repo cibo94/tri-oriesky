@@ -10,4 +10,4 @@ RewriteRule ^kontakt/?$ /index.html?page=kontakt.html [L,R=301]
 RewriteRule ^referencie/?$ /index.html?page=referencie.html [L,R=301]
 RewriteRule ^sluzby/?$ /index.html?page=sluzby.html [L,R=301]
 
-ErrorDocument 404 http://tri-oriesky.890m.com/index.html?page=404.html
+ErrorDocument 404 http://3oriesky.sk/index.html?page=404.html
