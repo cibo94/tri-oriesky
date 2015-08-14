@@ -59,7 +59,7 @@ Gallery =->
 		init_border()
 
 	init_border =->
-		$("#border")
+		$("body")
 			.width ->
 				"#{$(window).width()-25}px"
 			.height ->

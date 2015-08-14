@@ -58,7 +58,7 @@
       return init_border();
     };
     init_border = function() {
-      return $("#border").width(function() {
+      return $("body").width(function() {
         return ($(window).width() - 25) + "px";
       }).height(function() {
         return ($(window).height() - 25) + "px";

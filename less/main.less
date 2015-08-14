@@ -25,15 +25,15 @@
 @import "body.less";
 @import "index.less";
 @import "content.less";
-@import "galeria.less";
 
 /*Basic Colors*/
 @base_background: #FFFFFF;
 
 /*Constants*/
-@menu_text_size: 20%;
 @menu_text_bg: #FFFFFF;
 @menu_icon_size: 290px;
+@menu_text_size: 40px;
+
 
 /**
  * @brief Set transition
@@ -45,6 +45,7 @@
 	-moz-transition: @x @t;
 	-ms-transition: @x @t;
 	-webkit-transition: @x @t;
+    -o-transition: @x @t;
 }
 
 body {
@@ -54,12 +55,11 @@ body {
 }
 
 #container {
+    position: relative;
 	display: block;
 	width: 50%;
-	height: 100% - 10px;
+	height: 100%;
 	z-index: 0;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 25px;
-	padding-bottom: 25px;
 }

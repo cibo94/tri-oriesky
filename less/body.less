@@ -5,12 +5,18 @@
 @default_font_color: #3e3e3e;
 @default_font: 'Open Sans', sans-serif;
 
+html {
+    margin: 10px;
+    overflow: hidden;
+}
+
 body {
+    overflow: auto;
     font-family: @default_font;
     color: @default_font_color;
     text-align: justify;
-    padding: 15px;
-    margin: 0px;
+    border: 1px solid #656565;
+    margin: 10px;
 }
 
 p {
@@ -26,21 +32,4 @@ a {
 
 a:hover {
     color: #626262;
-}
-
-#border {
-
-    position: fixed;
-    z-index: 999;
-    border: 1px solid #656565;
-    left: 10px;
-    top: 10px;
-
-    #container-wrapper {
-        position: 'absolute';
-        height: 100%;
-        width: 100%;
-        top: 10px;
-        overflow-y: auto;
-    }
 }
